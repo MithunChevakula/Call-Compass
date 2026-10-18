@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Compass</title>
+  <link rel="stylesheet" href="/frontend/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">✦</span> Call Compass</a>
+    <div class="top-actions"><span id="apiStatus" class="status-pill"><span class="status-dot"></span> Checking API</span><button id="historyBtn" class="ghost-btn">Past calls <span id="historyCount">0</span></button></div>
+  </header>
+
+  <main id="app" class="shell"></main>
+
+  <template id="start-template">
+    <section class="welcome">
+      <div class="eyebrow">CALLER CONSOLE · 01</div>
+      <h1>Keep the call<br><em>moving.</em></h1>
+      <p class="lede">A quiet guide for the live moments that make or break a cold call. One stage at a time, with room for the prospect's actual words.</p>
+      <form id="startForm" class="start-card">
+        <div class="card-label">START A NEW CALL</div>
+        <div class="form-grid">
+          <label>Prospect name<input required name="prospectName" placeholder="e.g. Priya Shah"></label>
+          <label>Company<input required name="company" placeholder="e.g. Northstar Dental"></label>
+        </div>
+        <label>What do you know going in?<span class="optional">OPTIONAL</span><textarea name="context" rows="2" placeholder="A note to keep in mind during the call..."></textarea></label>
+        <button class="primary-btn" type="submit">Open call guide <span>→</span></button>
+      </form>
+      <div class="principle"><span>01</span><strong>Not a script.</strong> A prompt to listen well and capture what matters.</div>
+    </section>
+  </template>
+
+  <template id="call-template">
+    <section class="call-layout">
+      <aside class="stage-rail"><div class="rail-title">THE GUIDE <span>8 STAGES</span></div><div id="stageList"></div><div class="rail-footer">CALL IN PROGRESS<br><span id="callTimer">00:00</span></div></aside>
+      <section class="stage-main">
+        <div class="call-meta"><div><span class="live-dot"></span> LIVE CALL <span class="meta-divider">/</span> <strong id="prospectLabel"></strong></div><button id="endCallBtn" class="end-btn">End call</button></div>
+        <div class="stage-heading"><div id="stageNumber" class="stage-number">01</div><div><div class="eyebrow" id="stageKicker">STAGE 01 OF 08</div><h2 id="stageTitle"></h2></div></div>
+        <div class="purpose-box"><div class="section-kicker">THE JOB OF THIS STAGE</div><p id="stagePurpose"></p></div>
+        <div class="content-grid"><div><div class="section-kicker">WHAT YOU MAY HEAR</div><div id="hearList" class="hear-list"></div></div><div class="capture-card"><div class="section-kicker">WHAT HAPPENED?</div><div id="resultOptions" class="result-options"></div><label class="words-label">Prospect's words <span>VERBATIM IF YOU CAN</span><textarea id="prospectWords" rows="5" placeholder="Capture the phrase you want to remember..."></textarea></label><button id="saveStageBtn" class="primary-btn">Save & continue <span>→</span></button></div></div>
+        <div class="next-stage" id="nextStage"></div>
+      </section>
+    </section>
+  </template>
+
+  <template id="history-template">
+    <section class="history-page"><div class="page-head"><div><div class="eyebrow">CALL LIBRARY</div><h1>Past calls</h1><p>Every conversation, and the furthest point it reached.</p></div><button id="newCallBtn" class="primary-btn">New call <span>+</span></button></div><div id="historyList" class="history-list"></div></section>
+  </template>
+
+  <div id="toast" class="toast"></div>
+  <script src="/frontend/app.js"></script>
+</body>
+</html>
