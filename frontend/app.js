@@ -1,4 +1,4 @@
-const API_BASE = window.CALL_COMPASS_API || localStorage.getItem("callCompassApi") || "http://localhost:8787";
+const API_BASE = window.CALL_COMPASS_API || localStorage.getItem("callCompassApi") || "https://call-compass.onrender.com";
 const stages = [
   { key:"opening", title:"Opening", purpose:"Reach the right person and say who you are. The prospect decides in the first ten seconds whether this call is worth a minute.", hears:["A switchboard or assistant asks what it is about.","“I’m somewhere else right now.”","The number belongs to somebody who left the company."] },
   { key:"purpose", title:"Purpose", purpose:"Say in one or two sentences why you called, in words the prospect can repeat to a colleague.", hears:["“What does your company do?” — often twice.","“Where did you get my number?”","“Is this a sales call?”"] },
