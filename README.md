@@ -2,6 +2,12 @@
 
 Call Compass is a caller-side guide for an eight-stage cold call. It keeps the caller oriented, shows the likely moments at each stage, captures the prospect's exact words, and stores a lightweight history of calls.
 
+## Live links
+
+- Frontend: https://call-compass-seven.vercel.app/
+- Backend health: https://call-compass.onrender.com/health
+- GitHub: https://github.com/MithunChevakula/Call-Compass
+
 ## Structure
 
 - `frontend/` is a dependency-free static app suitable for Vercel.
@@ -23,6 +29,7 @@ Open `frontend/index.html` in a browser. The default API is `http://localhost:87
 - `POST /calls` — `{ prospectName, company, callerName?, context? }`
 - `POST /calls/:id/stages` — `{ stage, result, prospectWords }`
 - `POST /calls/:id/close` — `{ outcome }`
+- `POST /calls/:id/debrief`
 - `GET /calls`
 
 ## Supabase and Render
